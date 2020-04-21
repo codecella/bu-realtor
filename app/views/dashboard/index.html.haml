@@ -1,0 +1,60 @@
+// // BU Realtor
+// // login
+// // sign up //FIXME : kajal use your html skills here!
+// // list of portfolio
+// //add
+
+// %html
+//   %header
+//     %link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous")
+//     %h2 BU Realtor
+//     %a.link{:href =>"#"} list of portfolio
+//     %a.button{:href =>"#"} add 
+//     %a.button{:href => "#"} login
+//     %a.link{:href => "#"} sign up
+  
+//   %foot!!!
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Default navbar
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
+  %body
+    / DEFAULT NAVBAR
+    %nav.navbar.navbar-default
+      .container-fluid
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} BU Realtor
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                List of portfolios
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} Link 1
+                %li
+                  %a{:href => "#"} Link 2
+                %li
+                  %a{:href => "#"} Link 3
+                %li.divider{:role => "separator"}
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "#"} Add
+            %li
+              %a{:href => "#"} Login
+            %li
+              %a{:href => "#"} Sign up
+        / /.navbar-collapse
+      / /.container-fluid
+    %script{:src => "http://code.jquery.com/jquery-2.1.4.js"}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
