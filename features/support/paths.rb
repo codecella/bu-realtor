@@ -17,8 +17,16 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     #And I am on the BU Realtor Dashboard
-    when /^the BU Realtor Dashboard$/
+    when /^the BU Realtor login/
+      welcome_login_path
+      
+     when /^the BU Realtor Dashboard/
       dashboard_index_path
+      
+    
+     when /^the show property page for "([^"]*)"$/
+        showProperty_path(Property.find_by_name($1))
+    
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

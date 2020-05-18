@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ 
 html, body {
   margin: 0;
   padding: 0;
@@ -26,15 +27,12 @@ div#main {
   padding: 0 20px 20px;
 }
 a {
-  background: transparent;
-  color: maroon;
-  text-decoration: underline;
-  font-weight: bold;
-}
+  color: black;
+  }
 h1 {
-  color: maroon;
+  color: black;
   font-size: 150%;
-  font-style: italic;
+  font-style: serif;
   display: block;
   width: 100%;
   /*border-bottom: 1px solid DarkSlateGrey;*/
@@ -44,6 +42,7 @@ h3{
   display: block;
   width: 100%;
   padding: 15px;
+  text-align: left;
 }
 h5{
   
@@ -51,6 +50,14 @@ h5{
   width: 100%;
   padding: 15px;
   padding-left: 0px;
+}
+h7{
+  color: grey;
+  font-size: 200%;
+  font-style: bold;
+  display: inline;
+  width: 125%;
+  /*border-bottom: 1px solid DarkSlateGrey;*/
 }
 img{
  padding: 15px; 
@@ -78,24 +85,23 @@ h1.title {
   margin: 0 0 0em;
   padding: 12px;
   background-color: transparent;
-  color: white;
-  border-bottom: 4px solid gold;
+  /*border-bottom: 4px solid gold;*/
   font-size: 3em;
-  font-style: normal;
+  font-style: sans-serif;
   text-align: left;
 }
 #notice, #warning {
   background: rosybrown;
-  margin: 1em 0;
-  padding: 4px;
+  /*margin: 1em 0;*/
+  /*padding: 4px;*/
 }
-form label {
+form label{
   display: block;
   line-height: 25px;
   font-weight: bold;
   color: maroon;
 }
-table#properties th.hilite {
+table#movies th.hilite {
   background-color: yellow;
 }
 #map {
@@ -109,3 +115,51 @@ table#properties th.hilite {
 	text-shadow: 0 2px white, 0 3px #777;
 	padding: 5px;
 }
+#button {
+  width: 250px;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 4px;
+  background-color: dodgerblue;
+  text-align: center;
+ 
+  
+}
+#circle{
+  padding-top: 100px;
+  text-align: center;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 128, 172, 1) 5%,
+    rgba(0, 128, 172, 1) 50%,
+    rgba(0, 128, 172, 0) 70.3%
+  );
+  height: 250px;
+  width: 23.5%;
+  color: white;
+  float:right;
+  padding-right: 10px;
+
+}
+.text{
+  
+  width: 300px;
+  padding:50px;
+}
+
+.footer{
+  background: grey;
+  color:white;
+  height: 30px;
+  padding-top: 1px;
+  }  
+   
+  
+
+.form1{
+   margin-left: 30%;
+}
+
+  

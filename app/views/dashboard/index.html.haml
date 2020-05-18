@@ -2,24 +2,33 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Default navbar
-    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %title NavBar
+    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", :integrity => "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", :rel => "stylesheet"}/
   %body
     %p
       /
       :css
         body{
-          background:#FAEBD7;
+          // background:#FAEBD7;
         }
         #wcText{
-          text-align: right;
-          color: black;
-          margin-right: ;
-          padding-left: 0%;
-          float: left;
-          margin-left: 5%;
-          padding-top: 10%;
-          font-family: "Comic Sans MS", cursive, sans-serif;
+          text-align: center;
+          // left:30px;
+    
+        }
+        #addProperty{
+          
+        }
+        
+        .card{
+        float: left;
+        height: 200px;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 2%;
+        }
+        .card-img-top{
+        height: 200px;
         }
         #im{
           
@@ -27,43 +36,26 @@
           
           border-radius: 10px;
         }
-    /
-      DEFAULT NAVBAR
-    %nav.navbar.navbar-default
-      .container-fluid
-        /
-          Brand and toggle get grouped for better mobile display
-        .navbar-header
-          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "#"} BU Realtor
-        /
-          Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                List of portfolios
-                %span.caret
-              %ul.dropdown-menu
-                %li
-                  /%a{:href => "#"} Link 1
-                  = link_to "Link1", link1_path
-                %li
-                  /%a{:href => "#"} Link 2
-                  = link_to "Show All Property", showProperty_path
-                %li
-                  %a{:href => "#"} Link 3
-                %li.divider{:role => "separator"}
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              /%a{:href => "#"} Add
-              = link_to "Add Property", createProperty_path
-            %li
-              = link_to "Log Out", logout_path
+        .btn-info{
+
+        align-content: right;
+        margin-left: 90%;
+        margin-top: 0px;
+        float:left;}
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      %a.navbar-brand{:href => "#"} BU Realtor
+      %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarNavDropdown.collapse.navbar-collapse
+        %ul.navbar-nav.nav
+          %li.nav-item.dropdown
+            %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
+              user.name
+            .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+              %a.dropdown-item= link_to "Account settings", logout_path
+              %a.dropdown-item= link_to "Log Out", logout_path
+              
+          
               /
                 \/register or sign in with github
         /
@@ -71,30 +63,45 @@
       /
         \/.container-fluid
    
-    %img{:height => "300", :src => "/pexels-photo-186077.jpeg", :width => "600"}/
-    %h2#wcText Let's make moves!
-    %script{:src => "http://code.jquery.com/jquery-2.1.4.js"}
-    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+    // %img{:height => "300", :src => "/pexels-photo-186077.jpeg", :width => "600"}/
     
-    -#  This file is app/views/movies/index.html.haml
+    // %h2#wcText Let's make moves!
+    %body
+    %div
+    %h2#wcText List of properties
+    %div
+    // %a.btn.btn-primary.btn-lg.active.float-right= link_to "Add Property", createProperty_path
+    // %a#addProperty= link_to "Add Property", createProperty_path
+   
+    / / %a.btn.btn-primary.btn-lg.active.float-right= link_to "Add Property", createProperty_path
+    // %a#addPr{:href => "/property/new"} Add Property
+    #addBtn
+    %a.btn.btn-info{:href => "/property/new", :role => "button"} Add
+
   
 
-    %table#properties.table.table-striped.col-md-12
-      %thead
-        %tr
-          %th Name -
-          %th Type
-          %th Price
-          %th Address
-          %th Description
-          %th Detail
-      %tbody
-        - @properties.each do |property|
-          %tr
-            %td= property.name
-            %td= property.apttype
-            %td= property.price
-            %td= property.address
-            %td= property.description
-            %td= link_to "More about #{property.name}", propertyDetail_path(property)
+    .container
+    .row
 
+    %div.container
+    %div.row
+    // %h2#wcText List of properties
+  - @properties.each do |property|
+    .card{:style => "width: 18rem;"}
+      // %img.card-img-top{:alt => "...", :src => "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?cs=srgb&dl=brown-and-gray-painted-house-in-front-of-road-1396122.jpg&fm=jpg"}/
+      .card-body
+        %h5.card-title= property.name
+        %p.card-text= property.apttype
+        %a= link_to "More about", propertyDetail_path(property) 
+        %br 
+
+%script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
+%script{:crossorigin => "anonymous", :integrity => "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"}
+%script{:crossorigin => "anonymous", :integrity => "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
+  
+  
+    
+    
+  
+
+    

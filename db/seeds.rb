@@ -7,13 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Properties.create!([{
-      name: "Chapin strett 102",
-      type: "House",
-      description: "Lorem ipsum",
-      price: 200000,
-      address: "Lorem ipsum avenue 32, NY",
-      status: "Leased"
-}])
+properties = [{name: "Chapin strett 102", apttype: "House", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            {name: "Murray street 56", apttype: "Apartment", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            {name: "Leroy strett 102", apttype: "Apartment", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            {name: "State strett 102", apttype: "Apartment", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            {name: "Court strett 102", apttype: "Apartment", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            {name: "Front strett 102", apttype: "Apartment", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            {name: "Cedar street 109", apttype: "House", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            {name: "Oak strett 102", apttype: "House", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            {name: "Katherene strett 102", apttype: "House", description: "Lorem ipsum", price: 200000, address: "Lorem ipsum avenue 32, NY", status: "Leased"},
+            ]
 
-p "Created #{Properties.count} properties"
+properties.each do |property|
+  Property.create!(property)
+end
+
+#p "Created #{Properties.count} properties"

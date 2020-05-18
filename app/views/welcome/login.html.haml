@@ -1,60 +1,83 @@
+!!!
 %html
     %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title BuRealtor
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href => "https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;900&display=swap", :rel => "stylesheet"}/
-    %div
-        %h2 Features (section link)
-        %h2 How it Works (section link)
+    = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %body
+        %nav.navbar.navbar-expand-lg.navbar-light
+            %nav.navbar.navbar-inverse.container-fluid.navbar-header
+                %a.navbar-brand{:href=>"#",:style => " font-size:48px"}BuRealtor
+                %ul.nav.navbar-nav
+                %li
+                    %a{:href => "#", :style => "color : grey"} features
+                %li
+                    %a{:href => "#", :style => "color : grey"} how it works
+                %ul.nav.navbar-nav.navbar-right
+                    %li
+                        %button.btn.btn-default.navbar-btn
+                            = link_to 'Register/Log in with Github', '/auth/github'
 
-%div
-%div 
-= link_to 'Register or Log in with Github', '/auth/github'
+    //%nav.navbar.navbar-expand-lg.navbar-light
 
-%section
-    %div.container
-        %h1  Your residential properties best option
-%section
-    %div.container
-        %h1 Features
-        %p Manage all your residential properties in one platform
-        %p Focus on building your portfolio
-        %p Track the status of your portafolios
-        %p Keep all your property information secured
-        %p Real-time analytics of your real estate assets
-        %p Request tenant payments - coming soon
+    %section
+        %div.container
+            %h7  Your residential properties best option
+            
+        %img{:style=>"float:right; padding-top:150; width:520px; height:650px"}(src = "/bgd.jpg")
+    %section
+        %div.container
+            %h1 Features
+            %blockquote.text{}
+                %p{:id=>"circle"} Manage all your residential properties in one platform
+            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
+                %p{:id=>"circle"} Focus on building your portfolio
+            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
+                %p{:id=>"circle"} Keep all your property information secured
+            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
+                %p{:id=>"circle"} Track the status of your portafolios
+            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
+                %p{:id=>"circle"} Real-time analytics of your real estate assets
+            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
+                %p{:id=>"circle"} Request tenant payments - coming soon
+          
+            
+    
+    %section
+        %div
+            %h7 How it Works
+            %ul
+                %li{:style=>"display:inline;padding-right:30px;font-size:1.5em"} Sign up
+                %li{:style=>"display:inline;padding-right:30px;font-size:1.5em"} Add portfolio
+                %li{:style=>"display:inline;padding-right:30px;font-size:1.5em"} Add property
+                %li{:style=>"display:inline;padding-right:30px;font-size:1.5em"} Track
+                %div.w-100
+    //     %h1 How it Works
+    // %div.row
+    // %div.col-sm
+    // Sign Up
+    // %div
+    // %div.col-sm
+    // Add portafolio
+    // %div.col-sm
+    // Add property
+    // %div.col-sm
+    // Track your assets
+    
+    %footer
+    
+    // %h1 Welcome
+    // %div 
+    // = link_to 'Register or Log in with Github', '/auth/github'
+    // %div
+    // =link_to 'Register or Log In with Facebook', '/auth/facebook'
+    // %div
+    // %body
+    
+    .footer
+        Copyright@Binghamton University Spring 2020
 
-%section
-    %div.container
-        %h1 How it Works
-        %div.row
-            %div.col-6 Sign up
-            %div.col Add portfolio
-            %div.w-100
-            %div.col Add property
-            %div.col Track 
-//     %h1 How it Works
-// %div.row
-// %div.col-sm
-// Sign Up
-// %div
-// %div.col-sm
-// Add portafolio
-// %div.col-sm
-// Add property
-// %div.col-sm
-// Track your assets
-
-%footer
-
-// %h1 Welcome
-// %div 
-// = link_to 'Register or Log in with Github', '/auth/github'
-// %div
-// =link_to 'Register or Log In with Facebook', '/auth/facebook'
-// %div
-// %body
-
-
-%footer Copyright@Binghamton University Spring 2020

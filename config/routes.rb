@@ -2,17 +2,29 @@ Rails.application.routes.draw do
 
 
 
+  get 'user/new'
+
+  get 'user/create'
+
+  get 'user/edit'
+
+  get 'user/show'
+
+  get 'user/destroyupdate'
+
+  get 'user/index'
+
   get 'property/new', :to => 'property#new' ,:as => 'createProperty'
   
   match 'property/create', :to => 'property#create' , :via => 'post'
   
-  match 'property/:id/edit', :to => 'property#edit', :as => 'editProperty', :via => [:get, :put]
+  match 'property/:id/edit', :to => 'property#edit', :as => 'editProperty', :via => [:get, :put, :post]
   
-  match 'property/update/:id', :to => 'property#update', :as => 'updateProperty', :via => [:put, :patch]
+  match 'property/update/:id', :to => 'property#update', :as => 'updateProperty', :via => [:get,:put ,:post, :patch]
 
   get 'property/show.:id', :to => 'property#show', :as => 'propertyDetail'
 
-  get 'property/destroyupdate/:id', :to => 'property#destroy', :as => 'deleteProperty', :via => [:delete]
+  match 'property/destroyupdate/:id', :to => 'property#destroy', :as => 'deleteProperty', :via => [:post, :delete]
   
   get 'property/index', :to => 'property#index', :as => 'showProperty'
 

@@ -1,50 +1,100 @@
 !!!
 %html
   %head
-    %link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous")
-    = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-    %body
-      %div.container
-        %div.navbar.navbar-expand-lg.bg-secondary.text-white
-          %h1.title Details about #{@property.name}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title NavBar
+    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", :integrity => "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", :rel => "stylesheet"}/
+  %body
+    %p
+      /
+      :css
+        body{
+          // background:#FAEBD7;
+        }
+        #wcText{
+          text-align: center;
+          // left:30px;
+    
+        }
+        #addProperty{
           
-      
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          /%a{:href => "#"} 
-          = link_to "Back to Dashboard", dashboard_index_path
-        %li
-          = link_to "Edit", editProperty_path(@property.id)
-        %li
-          = link_to "Delete", deleteProperty_path(@property.id)
-
-    %h3{:id => "map"} Property Address #{@property.address}
-    
-    %img(src = "/1.jpg" )
-    
-    %img(src="/2.jpg" )
-    %img(src = "/3.jpg" )
-    
-    %img(src="/4.jpg" )
-    %img(src = "/5.jpg" )
-    
-    %img(src="/6.jpg" )
-    
-    
-    
-    %h5 
-      %ul#details                 
-      %lable
-      Type:
-      = @property.apttype
+        }
         
-    %h5{:id =>"description"} 
-      Description:  #{@property.description}
-      
+        .card{
+        float: left;
+        height: 200px;
+        margin-left: 6%;
+        }
+        .card-img-top{
+        height: 200px;
+        }
+        #im{
+          
+          margin-left:10%;
+          
+          border-radius: 10px;
+        }
+        #addPr{
+        align-content: right;
+        margin-left: 90%;
+        float:left;}
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      %a.navbar-brand{:href => "#"} BU Realtor
+      %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarNavDropdown.collapse.navbar-collapse
+        %ul.navbar-nav.nav
+          %li.nav-item.dropdown
+            %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
+              user.name
+            .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+              %a.dropdown-item= link_to "Account settings", logout_path
+              %a.dropdown-item= link_to "Log Out", logout_path
+              
+          
+              /
+                \/register or sign in with github
+        /
+          \/.navbar-collapse
+      /
+        \/.container-fluid
+              
     
-    %h5 Price: $ =  #{@property.price}
+    %body
     
-    %h5{:id => "map"} Map View
-    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "300", :src => "https://www.google.com/maps/embed/v1/place?key=AIzaSyBwKfd3C_PY7eGDPTzqhtrVf6upm8-HgKM&q=2799 Broadway St,San Francisco, CA 94115", :style => "border:0", :width => "999"}
+      = link_to '<Go to Dashboard', dashboard_index_path
+      %div.container
+        %div.card
+          %div.card-body
+            %h5.card-title
+            %h5 <strong>Details of #{@property.name}</strong>
+            %ul
+              %li
+                <p><strong>Address: </strong>
+                #{@property.address}
+                </p>
+              %li
+                <p><strong>Type :</strong>
+                #{@property.apttype}
+                </p>
+              %li                
+                <p><strong>Description: </strong>
+                #{@property.description}
+                </p>
+              %li                
+                <p><strong>Price :</strong>
+                #{@property.price}
+                </p>
+              %p
+                = button_to "Edit", editProperty_path(@property.id), :class=>"btn btn-success"
+              %p
+                = button_to "Delete", deleteProperty_path(@property.id), method: :delete, data: {confirm: 'Are you sure?' }, :class=>"btn btn-secondary"
+                
+%script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
+%script{:crossorigin => "anonymous", :integrity => "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"}
+%script{:crossorigin => "anonymous", :integrity => "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
+  
+  
+    
+                  
+                

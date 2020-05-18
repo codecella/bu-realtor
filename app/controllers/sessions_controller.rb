@@ -95,7 +95,7 @@ class SessionsController < ApplicationController
   end
   
   def same_as_logged_in_user? info
-    user = User.find(session[:user_id])
+    user = User.find session[:user_id]
     user.name == info['name'] && user.email == info['email']
   end
  

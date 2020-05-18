@@ -216,6 +216,18 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should be checked$/ do |label, pa
   end
 end
 
+Given /the following property exist/ do |property_table|
+  property_table.hashes.each do |property|
+    Property.create property
+  end
+end
+
+Given /the following user exist/ do |users_table|
+  users_table.hashes.each do |user|
+    User.create user
+  end
+end
+
 Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label, parent|
   with_scope(parent) do
     field_checked = find_field(label)['checked']

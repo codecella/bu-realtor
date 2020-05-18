@@ -19,10 +19,12 @@ a {
 h1 {
   color: maroon;
   font-size: 150%;
-  font-style: italic;
+  // font-style: italic;
+  margin-left: 30%;
   display: block;
   width: 100%;
-  border-bottom: 1px solid DarkSlateGrey;
+  font-family: Arial;
+  // border-bottom: 1px solid DarkSlateGrey;
 }
 h1.title {
   margin: 0 0 1em;

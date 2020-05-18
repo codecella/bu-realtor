@@ -8,6 +8,10 @@ class DashboardController < ApplicationController
     
   end
   
+  def current_user
+    @current_user ||= User.find(session[:user_id])
+  end
+  
   def show
     id = params[:id]
     @property = Property.find(id)

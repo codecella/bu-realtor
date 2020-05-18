@@ -1,20 +1,89 @@
 /%h1 Property#new
 /%p Find me in app/views/property/new.html.haml
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title NavBar
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", :integrity => "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", :rel => "stylesheet"}/
 
-= form_tag property_create_path	 do
-  = label :property, :name, 'Name'
-  = text_field :property, 'name'
-  
-  = label :property, :apttype, 'Type'
-  = text_field :property, 'apttype'
-  
-  = label :property, :price, 'Price'
-  = text_field :property, 'price'
+    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", :integrity => "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", :rel => "stylesheet"}/
+  %body
+    %p
+      /
+      :css
+        body{
+          // background:#FAEBD7;
+        }
+        #wcText{
+          text-align: center;
+          // left:30px;
+    
+        }
+        #addProperty{
+          
+        }
+        
+        .card{
+        float: left;
+        height: 200px;
+        margin-left: 6%;
+        }
+        .card-img-top{
+        height: 200px;
+        }
+        #im{
+          
+          margin-left:10%;
+          
+          border-radius: 10px;
+        }
+        #addPr{
+        align-content: right;
+        margin-left: 90%;
+        float:left;}
+        #h1{
+          color:red;
+        }
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      %a.navbar-brand{:href => "#"} BU Realtor
+      %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarNavDropdown.collapse.navbar-collapse
+        %ul.navbar-nav.nav
+          %li.nav-item.dropdown
+            %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
+              user.name
+            .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+              %a.dropdown-item= link_to "Account settings", logout_path
+              %a.dropdown-item= link_to "Log Out", logout_path
+              
+          
+              /
+                \/register or sign in with github
+        /
+          \/.navbar-collapse
+      /
+        \/.container-fluid
 
-  = label :property, :address, 'Address'
-  = text_field :property, 'address'
-  
-  = label :property, :description, 'Description'
-  = text_field :property, 'description'
+= link_to '<Go to Dashboard', dashboard_index_path
+%div
 
-  = submit_tag 'Save Property'
+
+%h1 Add Property
+%body
+.form1
+  %form{"accept-charset" => "UTF-8", :action => "/property/create", :method => "post"}
+    %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+    %input{:name => "authenticity_token", :type => "hidden", :value => "v31h3AsjPXgy9S0sqHDcCeVrWLZotnfjFyOTIdeDvSSPyLkBT+RaO2drAU49M7EUa8iPuPHReTnoGaRiMcejnA=="}/
+    %label{:for => "property_name"} Name
+    %input#property_name{:name => "property[name]", :type => "text"}/
+    %label{:for => "property_apttype"} Type
+    %input#property_apttype{:name => "property[apttype]", :type => "text"}/
+    %label{:for => "property_price"} Price
+    %input#property_price{:name => "property[price]", :type => "text"}/
+    %label{:for => "property_address"} Address
+    %input#property_address{:name => "property[address]", :type => "text"}/
+    %label{:for => "property_description"} Description
+    %input#property_description{:name => "property[description]", :type => "text"}/
+    %input{:name => "commit", :type => "submit", :value => "Save Property"}/
