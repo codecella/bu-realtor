@@ -38,22 +38,6 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'simplecov', :require => false
-  gem 'sqlite3', '1.3.13'
-end
-
-group :test do
-  gem 'rspec-rails'
-  gem 'guard-rspec'
-  gem 'cucumber-rails', :require => false
-  gem 'cucumber-rails-training-wheels'
-  gem 'database_cleaner'
-end
-
-
 group :production do
   gem 'pg' 
   gem 'rails_12factor'
@@ -67,4 +51,24 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'simplecov', :require => false
+  # gem 'sqlite3', '1.3.13'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+end
+
+
+
+
 
