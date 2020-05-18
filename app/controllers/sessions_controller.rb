@@ -61,8 +61,6 @@ class SessionsController < ApplicationController
       redirect_to dashboard_index_path and return
     end
   end
-
-
   
   def failure
     begin

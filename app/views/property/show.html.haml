@@ -1,0 +1,50 @@
+!!!
+%html
+  %head
+    %link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous")
+    = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %body
+      %div.container
+        %div.navbar.navbar-expand-lg.bg-secondary.text-white
+          %h1.title Details about #{@property.name}
+          
+      
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          /%a{:href => "#"} 
+          = link_to "Back to Dashboard", dashboard_index_path
+        %li
+          = link_to "Edit", editProperty_path(@property.id)
+        %li
+          = link_to "Delete", deleteProperty_path(@property.id)
+
+    %h3{:id => "map"} Property Address #{@property.address}
+    
+    %img(src = "/1.jpg" )
+    
+    %img(src="/2.jpg" )
+    %img(src = "/3.jpg" )
+    
+    %img(src="/4.jpg" )
+    %img(src = "/5.jpg" )
+    
+    %img(src="/6.jpg" )
+    
+    
+    
+    %h5 
+      %ul#details                 
+      %lable
+      Type:
+      = @property.apttype
+        
+    %h5{:id =>"description"} 
+      Description:  #{@property.description}
+      
+    
+    %h5 Price: $ =  #{@property.price}
+    
+    %h5{:id => "map"} Map View
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "300", :src => "https://www.google.com/maps/embed/v1/place?key=AIzaSyBwKfd3C_PY7eGDPTzqhtrVf6upm8-HgKM&q=2799 Broadway St,San Francisco, CA 94115", :style => "border:0", :width => "999"}

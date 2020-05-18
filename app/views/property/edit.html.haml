@@ -1,0 +1,20 @@
+%h2 Edit Existing Property
+
+= form_tag updateProperty_path(@property.id), :method => :put do
+
+  = label :property, :name, 'Name'
+  = text_field :property, 'name'
+  
+  = label :property, :apttype, 'Type'
+  = text_field :property, 'apttype'
+  
+  = label :property, :price, 'Price'
+  = text_field :property, 'price'
+
+  = label :property, :address, 'Address'
+  = text_field :property, 'address'
+  
+  = label :property, :description, 'Description'
+  = text_field :property, 'description'
+
+  = submit_tag 'Update Property Details', :class => 'btn btn-primary'

@@ -13,3 +13,99 @@
  *= require_tree .
  *= require_self
  */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: White;
+  color: DarkSlateGrey;
+  font-family: Tahoma;
+  font-size: 12pt;
+}
+div#main {
+  margin: 0;
+  padding: 0 20px 20px;
+}
+a {
+  background: transparent;
+  color: maroon;
+  text-decoration: underline;
+  font-weight: bold;
+}
+h1 {
+  color: maroon;
+  font-size: 150%;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  /*border-bottom: 1px solid DarkSlateGrey;*/
+}
+h3{
+  font-size: 170%;
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+h5{
+  
+  display: block;
+  width: 100%;
+  padding: 15px;
+  padding-left: 0px;
+}
+img{
+ padding: 15px; 
+ width: 300px;
+ height: 200px;
+}
+img:hover{
+  padding: 15px;
+  width: 600px;
+  height: 400px;
+  transition: width 4s;
+  transition: height 2s
+}
+#description{
+  width: 120px;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  background-color: dodgerblue;
+  color: white;
+}
+h1.title {
+  margin: 0 0 0em;
+  padding: 12px;
+  background-color: transparent;
+  color: white;
+  border-bottom: 4px solid gold;
+  font-size: 3em;
+  font-style: normal;
+  text-align: left;
+}
+#notice, #warning {
+  background: rosybrown;
+  margin: 1em 0;
+  padding: 4px;
+}
+form label {
+  display: block;
+  line-height: 25px;
+  font-weight: bold;
+  color: maroon;
+}
+table#properties th.hilite {
+  background-color: yellow;
+}
+#map {
+  margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;   
+	font-size: 28px;
+	line-height: 42px;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+	padding: 5px;
+}

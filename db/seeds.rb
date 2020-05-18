@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Properties.create!([{
+      name: "Chapin strett 102",
+      type: "House",
+      description: "Lorem ipsum",
+      price: 200000,
+      address: "Lorem ipsum avenue 32, NY",
+      status: "Leased"
+}])
+
+p "Created #{Properties.count} properties"

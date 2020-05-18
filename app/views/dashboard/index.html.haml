@@ -1,19 +1,3 @@
-// // BU Realtor
-// // login
-// // sign up //FIXME : kajal use your html skills here!
-// // list of portfolio
-// //add
-
-// %html
-//   %header
-//     %link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous")
-//     %h2 BU Realtor
-//     %a.link{:href =>"#"} list of portfolio
-//     %a.button{:href =>"#"} add 
-//     %a.button{:href => "#"} login
-//     %a.link{:href => "#"} sign up
-  
-//   %foot!!!
 !!!
 %html
   %head
@@ -21,10 +5,34 @@
     %title Default navbar
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
   %body
-    / DEFAULT NAVBAR
+    %p
+      /
+      :css
+        body{
+          background:#FAEBD7;
+        }
+        #wcText{
+          text-align: right;
+          color: black;
+          margin-right: ;
+          padding-left: 0%;
+          float: left;
+          margin-left: 5%;
+          padding-top: 10%;
+          font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        #im{
+          
+          margin-left:10%;
+          
+          border-radius: 10px;
+        }
+    /
+      DEFAULT NAVBAR
     %nav.navbar.navbar-default
       .container-fluid
-        / Brand and toggle get grouped for better mobile display
+        /
+          Brand and toggle get grouped for better mobile display
         .navbar-header
           %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only Toggle navigation
@@ -32,7 +40,8 @@
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand{:href => "#"} BU Realtor
-        / Collect the nav links, forms, and other content for toggling
+        /
+          Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.dropdown
@@ -41,21 +50,51 @@
                 %span.caret
               %ul.dropdown-menu
                 %li
-                  %a{:href => "#"} Link 1
+                  /%a{:href => "#"} Link 1
+                  = link_to "Link1", link1_path
                 %li
-                  %a{:href => "#"} Link 2
+                  /%a{:href => "#"} Link 2
+                  = link_to "Show All Property", showProperty_path
                 %li
                   %a{:href => "#"} Link 3
                 %li.divider{:role => "separator"}
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{:href => "#"} Add
+              /%a{:href => "#"} Add
+              = link_to "Add Property", createProperty_path
             %li
-              %a{:href => "#"} Login
-            %li
-              %a{:href => "/final-project/burealtor/app/views/dashboard/signUp.html.haml"} Sign up
-              //register or sign in with github
-        / /.navbar-collapse
-      / /.container-fluid
+              = link_to "Log Out", logout_path
+              /
+                \/register or sign in with github
+        /
+          \/.navbar-collapse
+      /
+        \/.container-fluid
+   
+    %img{:height => "300", :src => "/pexels-photo-186077.jpeg", :width => "600"}/
+    %h2#wcText Let's make moves!
     %script{:src => "http://code.jquery.com/jquery-2.1.4.js"}
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+    
+    -#  This file is app/views/movies/index.html.haml
+  
+
+    %table#properties.table.table-striped.col-md-12
+      %thead
+        %tr
+          %th Name -
+          %th Type
+          %th Price
+          %th Address
+          %th Description
+          %th Detail
+      %tbody
+        - @properties.each do |property|
+          %tr
+            %td= property.name
+            %td= property.apttype
+            %td= property.price
+            %td= property.address
+            %td= property.description
+            %td= link_to "More about #{property.name}", propertyDetail_path(property)
+

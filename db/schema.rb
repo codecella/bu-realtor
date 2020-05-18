@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200420225023) do
+ActiveRecord::Schema.define(version: 20200518045414) do
 
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
@@ -19,6 +19,34 @@ ActiveRecord::Schema.define(version: 20200420225023) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.string   "house_name"
+    t.string   "house_address"
+    t.string   "house_info"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "leases", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "phone"
+    t.integer  "payment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string   "name"
+    t.string   "apttype"
+    t.string   "description"
+    t.integer  "price"
+    t.integer  "user_id"
+    t.string   "address"
+    t.string   "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
