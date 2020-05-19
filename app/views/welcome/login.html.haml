@@ -9,75 +9,60 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     %body
-        %nav.navbar.navbar-expand-lg.navbar-light
-            %nav.navbar.navbar-inverse.container-fluid.navbar-header
-                %a.navbar-brand{:href=>"#",:style => " font-size:48px"}BuRealtor
-                %ul.nav.navbar-nav
-                %li
-                    %a{:href => "#", :style => "color : grey"} features
-                %li
-                    %a{:href => "#", :style => "color : grey"} how it works
-                %ul.nav.navbar-nav.navbar-right
+        %div{:id => "front"}
+            %div{:id => "navbar"}
+                %%ul
                     %li
-                        %button.btn.btn-default.navbar-btn
-                            = link_to 'Register/Log in with Github', '/auth/github'
+                        %a{:href => "#right"} Features
+                    %li
+                        %a{:href => "#left"} How it works
+                    %li
+                        %h9
+                        = link_to 'Register or Log in with Github', '/auth/github'
 
-    //%nav.navbar.navbar-expand-lg.navbar-light
 
-    %section
-        %div.container
-            %h7  Your residential properties best option
-            
-        %img{:style=>"float:right; padding-top:150; width:520px; height:650px"}(src = "/bgd.jpg")
-    %section
-        %div.container
-            %h1 Features
-            %blockquote.text{}
-                %p{:id=>"circle"} Manage all your residential properties in one platform
-            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
-                %p{:id=>"circle"} Focus on building your portfolio
-            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
-                %p{:id=>"circle"} Keep all your property information secured
-            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
-                %p{:id=>"circle"} Track the status of your portafolios
-            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
-                %p{:id=>"circle"} Real-time analytics of your real estate assets
-            %blockquote.text{:cite => "http://www.inspireux.com/category/quotes/jesse-james-garrett/"}
-                %p{:id=>"circle"} Request tenant payments - coming soon
-          
-            
-    
-    %section
-        %div
-            %h7 How it Works
-            %ul
-                %li{:style=>"display:inline;padding-right:30px;font-size:1.5em"} Sign up
-                %li{:style=>"display:inline;padding-right:30px;font-size:1.5em"} Add portfolio
-                %li{:style=>"display:inline;padding-right:30px;font-size:1.5em"} Add property
-                %li{:style=>"display:inline;padding-right:30px;font-size:1.5em"} Track
-                %div.w-100
-    //     %h1 How it Works
-    // %div.row
-    // %div.col-sm
-    // Sign Up
-    // %div
-    // %div.col-sm
-    // Add portafolio
-    // %div.col-sm
-    // Add property
-    // %div.col-sm
-    // Track your assets
-    
-    %footer
-    
-    // %h1 Welcome
-    // %div 
-    // = link_to 'Register or Log in with Github', '/auth/github'
-    // %div
-    // =link_to 'Register or Log In with Facebook', '/auth/facebook'
-    // %div
-    // %body
-    
-    .footer
-        Copyright@Binghamton University Spring 2020
 
+            %div{:id => "section1"}
+                %h1{:id =>"title"} Welcome to BuRealtor
+        %section{:id =>"body"}
+            %div{:id => "right"}
+                %h10{:id => "tt"} 
+                    Feature's
+                %ol{:id =>"rounded-list"}
+                    %li 
+                        %a{:href => ""}
+                            Manage all your residential properties in one platform
+                    %li 
+                        %a{:href => ""}
+                            Focus on building your portfolio
+                    %li 
+                        %a{:href => ""}
+                            Keep all your property information secured
+                    %li 
+                        %a{:href => ""}
+                            Track the status of your portfolios
+                    %li 
+                        %a{:href => ""}
+                            Real-time analytics of your real estate assets
+                    %li 
+                        %a{:href => ""}
+                            Request tenant payments - coming soon
+            %div{:id => "left"}
+                %h10{:id => "tt"} 
+                    How it Work's
+                %ol{:id =>"rounded-list"}
+                    %li 
+                        %a{:href => ""}
+                            Sign up
+                    %li 
+                        %a{:href => ""}
+                            Add property
+                    %li 
+                        %a{:href => ""}
+                            Update details 
+                    %li 
+                        %a{:href => ""}
+                            Track property
+                            
+        .footer
+            Copyright@Binghamton University Spring 2020

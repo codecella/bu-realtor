@@ -30,6 +30,7 @@ class PropertyController < ApplicationController
     @property = Property.find params[:id]
     @property.destroy
     flash[:notice] = "#{@property.name} was deleted"
+    redirect_to dashboard_index_path
   end
 
   def index

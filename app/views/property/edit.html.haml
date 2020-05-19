@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title NavBar
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", :integrity => "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", :rel => "stylesheet"}/
     %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", :integrity => "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", :rel => "stylesheet"}/
   %body
     %p
@@ -39,6 +40,9 @@
         align-content: right;
         margin-left: 90%;
         float:left;}
+        #h1{
+          color:red;
+        }
     %nav.navbar.navbar-expand-lg.navbar-light.bg-light
       %a.navbar-brand{:href => "#"} BU Realtor
       %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
@@ -47,10 +51,10 @@
         %ul.navbar-nav.nav
           %li.nav-item.dropdown
             %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
-              user.name
+              #{@current_user.name}
             .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-              %a.dropdown-item= link_to "Account settings", logout_path
-              %a.dropdown-item= link_to "Log Out", logout_path
+              %a.dropdown-item= link_to "Account settings", logout_path, style: 'color: black' 
+              %a.dropdown-item= link_to "Log Out", logout_path, style: 'color: black'
               
           
               /
@@ -61,8 +65,9 @@
         \/.container-fluid
 
 = link_to '<Go to Dashboard', dashboard_index_path
+%div
 
-%h2 Edit Existing Property
+%h2 Edit Property
 
 = form_tag updateProperty_path(@property.id), :method => :put do
 

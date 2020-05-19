@@ -1,22 +1,25 @@
 Rails.application.routes.draw do
-
-
-
-  get 'user/new'
-
-  get 'user/create'
-
-  get 'user/edit'
-
-  get 'user/show'
-
-  get 'user/destroyupdate'
-
-  get 'user/index'
-
-  get 'property/new', :to => 'property#new' ,:as => 'createProperty'
   
-  match 'property/create', :to => 'property#create' , :via => 'post'
+  
+  get 'welcome/login', :as => :welcome_login
+  
+  root 'welcome#login'
+
+  match 'auth/:provider/callback', :to => 'sessions#create', :via => [:get, :post]
+  
+  match 'auth/failure', :to => 'sessions#failure', :via => [:get, :post]
+  
+  get 'dashboard/index'
+  
+  get '/login', :to => 'sessions#new', :as => 'login'
+  
+  get '/destroy', :to => 'sessions#destroy', :as => 'logout'
+  
+  get '/cleanup', :to => 'sessions#cleanup', :as => 'cleanup'
+
+  get 'property/new', :to => 'property#new' ,:as => 'createProperty', :via => [:post]
+  
+  match 'property/create', :to => 'property#create' , :via => [:post]
   
   match 'property/:id/edit', :to => 'property#edit', :as => 'editProperty', :via => [:get, :put, :post]
   
@@ -28,37 +31,11 @@ Rails.application.routes.draw do
   
   get 'property/index', :to => 'property#index', :as => 'showProperty'
 
-  get 'house/index'
+  resources :users
 
-  get 'house/show'
-
-  get 'house/new'
-
-  get 'house/create'
-
-  get 'house/edit'
-
-  get 'house/update'
-
-  get 'house/destroy'
-
-  match 'auth/:provider/callback', :to => 'sessions#create', :via => [:get, :post]
-  match 'auth/failure', :to => 'sessions#failure', :via => [:get, :post]
-  get '/login', :to => 'sessions#new', :as => 'login'
-  get '/destroy', :to => 'sessions#destroy', :as => 'logout'
-  get '/Link1', :to => 'dashboard#Link1', :as => 'link1'
-  get '/cleanup', :to => 'sessions#cleanup', :as => 'cleanup'
-   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :houses
-  resources :users
   
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-  get 'dashboard/index'
-  get 'welcome/login', :as => :welcome_login
-  root 'welcome#login'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

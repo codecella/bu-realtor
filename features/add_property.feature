@@ -1,4 +1,4 @@
-Feature:
+Feature: Add property
     As a User
     I want to successfully login in given valid EmailId and Password
     So I can see the Dashboard
@@ -14,12 +14,11 @@ Background: Following users exist
 
 @omniauth_test
 Scenario: See Login Page
-    When I am on the BU Realtor login
-    Then I should see "Log in" header
-    Then I should see "Register or Log in with Github" header
-    
-@omniauth_test
-Scenario: Successfully Log in
     Given I am signed in with provider "Github"
-    Then I should see "BU Realtor" header
-    Then I should see "List of properties" header
+    Then I should see "Add" header
+    And I follow "Add Property"
+    Then I should see "Add Property" header
+    And I should see "Type" header
+    And I should see "Price" header
+    And I should see "Address" header
+    And I should see "Description" header

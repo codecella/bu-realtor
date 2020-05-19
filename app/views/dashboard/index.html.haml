@@ -50,10 +50,10 @@
         %ul.navbar-nav.nav
           %li.nav-item.dropdown
             %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
-              user.name
+              #{@current_user.name}
             .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-              %a.dropdown-item= link_to "Account settings", logout_path
-              %a.dropdown-item= link_to "Log Out", logout_path
+              %a.dropdown-item= link_to "Account settings", logout_path, style: 'color: black' 
+              %a.dropdown-item= link_to "Log Out", logout_path, style: 'color: black'
               
           
               /
@@ -71,12 +71,12 @@
     %h2#wcText List of properties
     %div
     // %a.btn.btn-primary.btn-lg.active.float-right= link_to "Add Property", createProperty_path
-    // %a#addProperty= link_to "Add Property", createProperty_path
-   
+    #addBtn
+    %a= link_to "Add Property", createProperty_path
     / / %a.btn.btn-primary.btn-lg.active.float-right= link_to "Add Property", createProperty_path
     // %a#addPr{:href => "/property/new"} Add Property
-    #addBtn
-    %a.btn.btn-info{:href => "/property/new", :role => "button"} Add
+    // #addBtn
+    // %a.btn.btn-info{:href => "/property/new",  :name => "addBn",  :role => "button"} Add
 
   
 
