@@ -21,16 +21,16 @@ describe PropertyController, type: :controller do
         before do 
             controller.session[:user_id] = "1"
         end
-        let(:id_1) {"1"}
+        let(:id) {"1"}
         # let(:id_1) {"1"}
         let(:user){instance_double('User', name: 'pranitha')}
         let(:property_1){instance_double("Property", name: "Murray street 56")}
         let(:params){{name: "Murray street 56"}}
         it 'show the property' do
-                allow(User).to receive(:find).with(id_1).and_return(user)
+                allow(User).to receive(:find).with(id).and_return(user)
               
-               expect(Property).to receive(:find).with(id_1).and_return(property_1)
-               get :show, :id => id_1
+               expect(Property).to receive(:find).with(id).and_return(property_1)
+               get :show, :id => id
               
         end
   end
