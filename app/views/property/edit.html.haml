@@ -20,6 +20,10 @@
         #addProperty{
           
         }
+         .ml-auto .dropdown-menu {
+         left: auto !important;
+         right: 0px;
+         }
         
         .card{
         float: left;
@@ -48,12 +52,12 @@
       %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavDropdown", "data-toggle" => "collapse", :type => "button"}
         %span.navbar-toggler-icon
       #navbarNavDropdown.collapse.navbar-collapse
-        %ul.navbar-nav.nav
+        %ul.navbar-nav.nav.ml-auto
           %li.nav-item.dropdown
             %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
               #{@current_user.name}
             .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-              %a.dropdown-item= link_to "Account settings", logout_path, style: 'color: black' 
+              // %a.dropdown-item= link_to "Account settings", logout_path, style: 'color: black' 
               %a.dropdown-item= link_to "Log Out", logout_path, style: 'color: black'
               
           
