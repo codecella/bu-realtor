@@ -102,7 +102,7 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
 
-Then /^(?:|I )should see "([^"]*)" header$/ do |text|
+Then /^(?:|I )should see "([^"]*)" on page$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
   else
@@ -120,6 +120,8 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   end
 end
 
+
+        
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_no_content(text)
@@ -214,6 +216,17 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should be checked$/ do |label, pa
       assert field_checked
     end
   end
+end
+
+Given /the following property exist/ do |property_table|
+  property_table.hashes.each do |property|
+    Property.create property
+    
+  end
+end
+
+Then /^I the should see show property page for "(.*)"/ do |property|
+  showProperty_path(Property.find_by_name(property))
 end
 
 Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label, parent|

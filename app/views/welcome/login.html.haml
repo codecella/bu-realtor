@@ -1,0 +1,68 @@
+!!!
+%html
+    %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title BuRealtor
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;900&display=swap", :rel => "stylesheet"}/
+    = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %body
+        %div{:id => "front"}
+            %div{:id => "navbar"}
+                %%ul
+                    %li
+                        %a{:href => "#right"} Features
+                    %li
+                        %a{:href => "#left"} How it works
+                    %li
+                        %h9
+                        = link_to 'Register or Log in with Github', '/auth/github'
+
+
+
+            %div{:id => "section1"}
+                %h1{:id =>"title"} Welcome to BuRealtor
+        %section{:id =>"body"}
+            %div{:id => "right"}
+                %h10{:id => "tt"} 
+                    Feature's
+                %ol{:id =>"rounded-list"}
+                    %li 
+                        %a{:href => ""}
+                            Manage all your residential properties in one platform
+                    %li 
+                        %a{:href => ""}
+                            Focus on building your portfolio
+                    %li 
+                        %a{:href => ""}
+                            Keep all your property information secured
+                    %li 
+                        %a{:href => ""}
+                            Track the status of your portafolios
+                    %li 
+                        %a{:href => ""}
+                            Real-time analytics of your real estate assets
+                    %li 
+                        %a{:href => ""}
+                            Request tenant payments - coming soon
+            %div{:id => "left"}
+                %h10{:id => "tt"} 
+                    How it Work's
+                %ol{:id =>"rounded-list"}
+                    %li 
+                        %a{:href => ""}
+                            Sign up
+                    %li 
+                        %a{:href => ""}
+                            Add portfolio
+                    %li 
+                        %a{:href => ""}
+                            Add property
+                    %li 
+                        %a{:href => ""}
+                            Track property
+                            
+        .footer
+            Copyright@Binghamton University Spring 2020

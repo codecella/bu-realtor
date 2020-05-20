@@ -1,11 +1,42 @@
 Rails.application.routes.draw do
+  
+  resources :users
+  
+  get 'welcome/login', :as => :welcome_login
+  
+  root 'welcome#login'
+
+  match 'auth/:provider/callback', :to => 'sessions#create', :via => [:get, :post]
+  
+  match 'auth/failure', :to => 'sessions#failure', :via => [:get, :post]
+  
+  get 'dashboard/index'
+  
+  get '/login', :to => 'sessions#new', :as => 'login'
+  
+  get '/destroy', :to => 'sessions#destroy', :as => 'logout'
+  
+  get '/cleanup', :to => 'sessions#cleanup', :as => 'cleanup'
+
+  get 'property/new', :to => 'property#new' ,:as => 'createProperty', :via => [:post]
+  
+  match 'property/create', :to => 'property#create' , :via => [:post]
+  
+  match 'property/:id/edit', :to => 'property#edit', :as => 'editProperty', :via => [:get, :put, :post]
+  
+  match 'property/update/:id', :to => 'property#update', :as => 'updateProperty', :via => [:get,:put ,:post, :patch]
+
+  get 'property/show.:id', :to => 'property#show', :as => 'propertyDetail'
+
+  match 'property/destroyupdate/:id', :to => 'property#destroy', :as => 'deleteProperty', :via => [:post, :delete]
+  
+  get 'property/index', :to => 'property#index', :as => 'showProperty'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-  get 'dashboard/index'
-  root 'dashboard#index'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -22,6 +53,8 @@ Rails.application.routes.draw do
   #       post 'toggle'
   #     end
   #
+  
+
   #     collection do
   #       get 'sold'
   #     end
@@ -55,3 +88,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+ 

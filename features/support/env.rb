@@ -8,6 +8,25 @@ require 'cucumber/rails'
 
 # frozen_string_literal: true
 
+Before('@omniauth_test') do
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.add_mock(:github, {
+    :uid => '49619285',
+    :info => {
+      :name => "My Tester",
+      :email => "mytester@gmail.com"
+    }
+  })
+  
+end
+
+After('@omniauth_test') do
+  OmniAuth.config.test_mode = false;
+end
+
+
+
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.

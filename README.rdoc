@@ -1,4 +1,8 @@
 == README
+# BURealtor Application
+<p align="center">
+<img alt="RealEstate Image" src="/burealtor/public/nav.gif">
+</p>
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -22,6 +26,80 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+The project is done using the concepts of Ruby on Rails for development. 
+
+The purpose of this project is to design a portal for selling the properties.
+ 
+## Deployment 
+
+We have deployed our project on **Heroku**. To view, [click here](https://.herokuapp.com).
+
+
+## Local Deployment
+
+To run the app locally, follow these steps:
+
+- Clone the repository on your local machine.
+
+```
+git clone https://github.com/codecella/bu-realtor.git
+```
+
+- Go to the directory of the project where it is cloned using terminal
+
+
+- Install gems
+```
+bundle install
+```
+-  Complete Database Migrations
+```
+rake db:migrate
+```
+- Add pre-configured users
+```
+rake db:seed
+```
+- Run server
+```
+rails server
+```
+Your app will run on http://localhost:8080
+
+
+## Features
+### Users
+  - Log in to the system with Github
+  - Delete properties from the system
+  - Delete inquiries from the system
+  - View the list of houses and detailed information
+  - View the list of inquiries and detailed information
+
+### Properties
+  - Can log in/sign up into the system
+  - Can edit the profile
+  - Edit house information that they have listed
+  - View all houses (including those listed by others)
+  - Remove a house from the listing (previously created by this realtor)
+  - Multiple realtors can belong to a single company
+
+
+### Miscellaneous
+   - All users can use their **Github account** to log into the system
+    
+## Testing 
+
+The testing module has been designed thoroughly for the users model and controller. 
+To view the configuration of the added database module of the user, go to `` file. 
+
+## Contributors
+
+  - [Abhilasha Jain](ajain35@binghamton.edu)
+  - [Carolina H](cherna19@binghamton.edu)
+  - [Kajal C](kchings1@binghamton.edu)
+  - [Pranitha Reddy](preddyl1@binghamton.edu)
+  - [Preeti Priyam](ppriyam1@binghamton.edu)
 
 
 Please feel free to use a different markup language if you do not plan to run

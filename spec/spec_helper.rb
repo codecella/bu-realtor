@@ -13,6 +13,19 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require 'omniauth'
+OmniAuth.config.test_mode = true
+omniauth_hash = { 
+  'provider' => 'github',
+  'id' => 1,
+  'info' => {
+      'name' => "pranitha",
+      'email' =>"preddyl1@binghamton.edu",
+  }
+}
+OmniAuth.config.add_mock(:github, omniauth_hash)
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
