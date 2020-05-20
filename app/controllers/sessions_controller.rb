@@ -43,7 +43,7 @@ class SessionsController < ApplicationController
           if User.exists?(auth_hash['info'])
             user = User.create_with_omniauth(auth_hash['info'])
             auth = user.add_provider(auth_hash)
-            message = "You can now login using #{auth_hash["provider"].captitalize}"
+            message = "You can now login using #{auth_hash["provider"].capitalize}"
           else
             user = User.create_with_omniauth(auth_hash["info"])
             auth = user.authorizations.create_with_omniauth(auth_hash)

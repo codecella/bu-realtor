@@ -18,7 +18,7 @@ class PropertyController < ApplicationController
 
   def edit
     @property = Property.find params[:id]
-    #flash[:notice] = "#{@property.name} was succesfully edited"
+    flash[:notice] = "#{@property.name} was succesfully edited"
   end
 
   def show

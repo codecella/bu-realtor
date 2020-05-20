@@ -1,4 +1,7 @@
 Feature: show an property
+  As a real estate agent
+  I want to see a portfolio property profile
+  So that I can explore the property details in real-time
   
 Background:
   Given I am on the BU Realtor login

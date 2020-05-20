@@ -1,4 +1,4 @@
-Feature:
+Feature: Login feature
     As a User
     I want to successfully login in given valid EmailId and Password
     So I can see the Dashboard

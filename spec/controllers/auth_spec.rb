@@ -6,17 +6,17 @@ describe SessionsController, type: :controller do
     end
     
     describe "#create" do
-      #create session controller
-      let(:user) { instance_double('User', name: 'carla', email: 'caera17@example.edu') }
-      let(:auth_id) { instance_double('Authorization', provider: 'GitHub', uid: '12346') }
-      let(:auth_with) { instance_double('Authorization', provider: 'GitHub', uid: '12346', user_id: 1) }
-              
-      it "Authorize to log with Github" do
-      allow(controller).to receive(:session?).and_return(false)
-      allow(User).to receive(:exists?).with(OmniAuth.config.mock_auth[:github]['info']).and_return(false)
-      expect(User).to receive(:create_with_omniauth).with(OmniAuth.config.mock_auth[:github]['info']).and_return(user)
-      post :create, provider: :github
-    #   expect(flash[:notice]).to  match("You have log in as @user.name")
+        #create session controller
+        let(:user) { instance_double('User', name: 'Carla', email: 'caera17@example.edu') }
+        let(:auth_id) { instance_double('Authorization', provider: 'Github', uid: '12346') }
+        let(:auth_with) { instance_double('Authorization', provider: 'Github', uid: '12346', user_id: 1) }
+                  
+        it "Authorize to log with Github" do
+           allow(controller).to receive(:session?).and_return(false)
+           allow(User).to receive(:exists?).with(OmniAuth.config.mock_auth[:github]['info']).and_return(false)
+           expect(User).to receive(:create_with_omniauth).with(OmniAuth.config.mock_auth[:github]['info']).and_return(user)
+           post :create, provider: :github
+           #expect(flash[:notice]).to  match(/Welcome Carla! You've signed up via github./)
       end
     end
     
@@ -30,16 +30,16 @@ describe SessionsController, type: :controller do
         end
         let(:id_1) {"1"}
         # let(:id_1) {"1"}
-        let(:user) { instance_double('User', name: 'carla', email: 'cherna17@binghamton.edu') }
+        let(:user) { instance_double('User', name: 'Carla', email: 'cherna17@binghamton.edu') }
         let(:auth_id) { instance_double('Authorization', provider: 'GitHub', uid: '12346') }
         let(:auth_with) { instance_double('Authorization', provider: 'GitHub', uid: '12346', user_id: 1) }
         # let(:params){{name: "Murray street 56"}}
         it 'Delete property from system' do
-              allow(User).to receive(:find).with(id_1).and_return(user)
-              allow(Authorization).to receive(:find).with(id_1).and_return(user)
+            allow(User).to receive(:find).with(id_1).and_return(user)
+            allow(Authorization).to receive(:find).with(id_1).and_return(user)
             #   expect().to receive(:destroy)
-              delete :destroy, :id => id_1
-             # expect(flash[:notice]).to  match("Murray street 56 was updated")
+            delete :destroy, :id => id_1
+            expect(flash[:notice]).to  match(/Carla has logged out/)
         end
     end
     
