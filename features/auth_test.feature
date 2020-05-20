@@ -15,11 +15,11 @@ Background: Following users exist
 @omniauth_test
 Scenario: See Login Page
     When I am on the BU Realtor login
-    Then I should see "Log in" header
-    Then I should see "Register or Log in with Github" header
+    Then I should see "Log in" on page
+    Then I should see "Register or Log in with Github" on page
     
 @omniauth_test
 Scenario: Successfully Log in
     Given I am signed in with provider "Github"
-    Then I should see "BU Realtor" header
-    Then I should see "List of properties" header
+    Then I should see "BU Realtor" on page
+    Then I should see "List of properties" on page

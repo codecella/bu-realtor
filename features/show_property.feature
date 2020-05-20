@@ -18,5 +18,5 @@ Scenario:
  Given I am signed in with provider "Github"
  And  I follow "More about"
  Then I the should see show property page for "Murray street 56"
- And I should see "Details of Murray street 56" header
- And I should see "Apartment" header
+ And I should see "Details of Murray street 56" on page
+ And I should see "Apartment" on page

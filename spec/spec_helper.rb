@@ -18,10 +18,10 @@ require 'omniauth'
 OmniAuth.config.test_mode = true
 omniauth_hash = { 
   'provider' => 'github',
-  'uid' => "12345678",
+  'id' => 1,
   'info' => {
-      'name' => "Baxter Bearcat",
-      'email' =>"bbearcat1@binghamton.edu",
+      'name' => "pranitha",
+      'email' =>"preddyl1@binghamton.edu",
   }
 }
 OmniAuth.config.add_mock(:github, omniauth_hash)

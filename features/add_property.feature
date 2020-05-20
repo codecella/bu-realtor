@@ -15,10 +15,13 @@ Background: Following users exist
 @omniauth_test
 Scenario: See Login Page
     Given I am signed in with provider "Github"
-    Then I should see "Add" header
+    Then I should see "Add" on page
     And I follow "Add Property"
-    Then I should see "Add Property" header
-    And I should see "Type" header
-    And I should see "Price" header
-    And I should see "Address" header
-    And I should see "Description" header
+    Then I should see "Add Property" on page
+    And I should see "Type" on page
+    And I should see "Price" on page
+    And I should see "Address" on page
+    And I should see "Description" on page
+    When I fill in "Type" with "Sample"
+    And I press "Save Property"
+    And I should see "added" on page

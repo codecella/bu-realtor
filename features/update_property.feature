@@ -23,8 +23,8 @@ Scenario:
  And  I follow "More about"
  Then I the should see show property page for "Murray street 56"
  When I press "Edit"
- And I should see "Edit Property" header
+ And I should see "Edit Property" on page
  Then I press "Update Property Details"
- And I should see "Murray street 56 was updated" header
+ And I should see "Murray street 56 was updated" on page
  
  

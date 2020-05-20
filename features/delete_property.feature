@@ -22,6 +22,6 @@ Given I am signed in with provider "Github"
  And  I follow "More about"
  Then I the should see show property page for "Murray street 56"
  Then I press "Delete"
- Then I should see "Murray street 56 was deleted" header
+ Then I should see "Murray street 56 was deleted" on page
  
 

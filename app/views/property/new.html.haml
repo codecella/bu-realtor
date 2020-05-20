@@ -6,7 +6,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title NavBar
     %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", :integrity => "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", :rel => "stylesheet"}/
-
+    %csrf_meta_tags
     %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", :integrity => "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", :rel => "stylesheet"}/
   %body
     %p
@@ -68,7 +68,7 @@
 
 = link_to '<Go to Dashboard', dashboard_index_path
 %div
-
+// skip_before_action :verify_authenticity_token
 
 %h1 Add Property
 %body
