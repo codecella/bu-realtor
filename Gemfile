@@ -39,7 +39,7 @@ gem 'omniauth-github'
 gem 'omniauth-facebook'
 
 group :production do
-  gem 'pg' 
+  gem 'pg', '~> 0.21' 
   gem 'rails_12factor'
 end
 
